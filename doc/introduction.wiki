@@ -34,7 +34,7 @@ As this sounds really familiar and awesome in most of the places, the question i
 
 	# Graphical IO ?
 	
-		- Similar to relation syntax, this would go bi-directional path, and can be recursive in nature, I dont know what would be the benefit of having recursiveness in this implementaion, but this is something which comes for free with this kind of implementaion, which we can avoid later on, if we dont want to make things more complex. ex: "[`Geom` --> `Looks` --> `ARG`] ==> `Asset` ==> [`ShotA` ==> [`FilesetA`] -->, 'ShotB']" (this syntax is just an example, not yet protoryped)
+		- Unlike to relation syntax, this would go bi-directional way, and can be recursive in nature, I dont know what would be the benefit of having recursiveness in this implementaion, but this is something which comes for free with this kind of implementaion, which we can avoid later on, if we dont want to make things super complex. ex: "[`Geom` --> `Looks` --> `ARG`] ==> `Asset` ==> [`ShotA` ==> [`FilesetA`] -->, 'ShotB']" (this syntax is just an example, not yet protoryped)
 
 
 ## Advantage of this implementations

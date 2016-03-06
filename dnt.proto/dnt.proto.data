@@ -1,0 +1,100 @@
+'sg_asset_type:sg_assetgroup.name:code'
+{
+'asset_data' : [
+
+{'code': 'cJarus', 'type': 'Asset', 'id': 2275, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 1, 'name': 'Rebels'}}, 
+
+{'code': 'cYoda', 'type': 'Asset', 'id': 2285, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 3, 'name': 'Rebels'}}, 
+
+{'code': 'old carlos', 'type': 'Asset', 'id': 2280, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 2, 'name': 'Main'}}, 
+
+{'code': 'cLia', 'type': 'Asset', 'id': 2276, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 1, 'name': 'Rebels'}}, 
+
+{'code': 'cLuke', 'type': 'Asset', 'id': 3561, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 1, 'name': 'Main'}}, 
+
+{'code': 'cBen', 'type': 'Asset', 'id': 2035, 'sg_asset_type': 'Characters', 'sg_assetgroup': {'type': 'CustomEntity02', 'id': 1, 'name': 'Padvan'}}
+
+]
+,
+
+'relation_syntax': 'sg_asset_type:sg_assetgroup.name:code:steps.short_name:short.task.entity.name'
+,
+'big_data' : 
+[{'code': 'cJarus',
+ 'id': 2275,      
+ 'sg_asset_code': 'Kanan Jarrus',
+     'sg_asset_type': 'Characters',  
+     'sg_assetgroup': {'id': 1, 'name': 'Rebels', 'type': 'CustomEntity02'},
+     'steps': [{'code': 'Designs',                                          
+                'color': '253,175,251',                                     
+                'entity_type': 'Asset',                                     
+                'id': 9,                                                    
+                'list_order': 2,                                            
+                'short_name': 'DSG',                                        
+                'task': [
+                            {'content': 'Designs',
+                            'entity': {'id': 2275, 'name': 'cJarus', 'type': 'Asset'},
+                            'id': 18532,
+                            'step': {'id': 9, 'name': 'Designs', 'type': 'Step'},
+                            'task_assignees': [],
+                            'type': 'Task'}
+                        ],
+                'type': 'Step'},                                            
+               {'code': 'Modeling',                                         
+                'color': '50,149,253',                                      
+                'entity_type': 'Asset',                                     
+                'id': 10,                                                   
+                'list_order': 3,                                            
+                'short_name': 'NEU',                                        
+                'task': [
+                           {'content': 'Model',
+                            'entity': {'id': 2275, 'name': 'cJarus', 'type': 'Asset'},
+                            'id': 18530,
+                            'step': {'id': 10, 'name': 'Modeling', 'type': 'Step'},
+                            'task_assignees': [{'id': 98,
+                                                'name': 'Mahendra Gangaiwar',
+                                                'type': 'HumanUser'}],
+                            'type': 'Task'},
+
+                    ],
+                'type': 'Step'},                                            
+               {'code': 'LookDev',                                          
+                'color': '254,125,179',                                     
+                'entity_type': 'Asset',                                     
+                'id': 36,                                                   
+                'list_order': 10,                                           
+                'short_name': 'PRL',                                        
+                'task': [
+                            {'content': 'Pre Lighting',                                  
+                            'entity': {'id': 2275, 'name': 'cJarus', 'type': 'Asset'},  
+                            'id': 18524,                                                
+                            'step': {'id': 36, 'name': 'LookDev', 'type': 'Step'},      
+                            'task_assignees': [{'id': 98,                               
+                                                'name': 'Mahendra Gangaiwar',           
+                                                'type': 'HumanUser'}],
+
+                            'type': 'Task'},                                            
+
+				],
+            'type': 'Step'},                                            
+           {'code': 'Facials',                                          
+            'color': '50,149,253',                                      
+            'entity_type': 'Asset',                                     
+            'id': 41,                                                   
+            'list_order': 4,                                            
+            'short_name': 'FAC',                                        
+   			'task': [
+
+					   {'content': 'Model',
+						'entity': {'id': 2275, 'name': 'cJarus', 'type': 'Asset'},
+						'id': 18529,
+						'step': {'id': 41, 'name': 'Facials', 'type': 'Step'},
+						'task_assignees': [],
+						'type': 'Task'},
+
+				],
+         'type': 'Step'},                                            
+            ],                                           
+
+ 'type': 'Asset'}]
+}
