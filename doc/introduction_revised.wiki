@@ -1,133 +1,133 @@
 ### Introduction
 
-COP, Core Object Package is a next generation API for anyone's pipeline. COP 
-will give the freedom and agility to integrate with all new/upcoming toolset 
-easily and efficiently. 
+COP, Core Object Package is a next generation API for anyone's pipeline. COP
+will give the freedom and agility to integrate with all new/upcoming toolset
+easily and efficiently.
 
-COP is implemeted with heavy usege of [Abstract Factory Method] so all the 
-objects created with it are interlinked with other desired Factory 
-Objects, which defines the Interface of the Object. [Node] object resides on 
-the very top of this design, which acts like a data store and has all the 
-required attributes and properties which any Node object would have in Visual 
-Programming Language, i.e. a Node will have its Parent, Children(if any) and 
+COP is implemeted with heavy usege of [Abstract Factory Method] so all the
+objects created with it are interlinked with other desired Factory
+Objects, which defines the Interface of the Object. [Node] object resides on
+the very top of this design, which acts like a data store and has all the
+required attributes and properties which any Node object would have in Visual
+Programming Language, i.e. a Node will have its Parent, Children(if any) and
 can also have Input and Output attributes to mimic complex graphical structures.
 
 The entire design is made of two components -
 
             1. Hierarchical
             2. Referential
-   
-            
-            
-	# Hierarchical -
-Being a Node, the very first property is relations, and is one of the 
-core properties of this API. Using the parent and child nodes relation in 
-these objects results in making an entire relational tree, as no objects would 
+
+
+
+    # Hierarchical -
+Being a Node, the very first property is relations, and is one of the
+core properties of this API. Using the parent and child nodes relation in
+these objects results in making an entire relational tree, as no objects would
 exist without its parent.
 
-The biggest advantage to this design is the ability to adopt other nodes in the 
-hierarchy to form new relations by either building a parent child relation or 
+The biggest advantage to this design is the ability to adopt other nodes in the
+hierarchy to form new relations by either building a parent child relation or
 making this relation with it's clone.
 
 
-The purpose of this design is to travel through objects at any given point of 
-time and place(on demand). For example, if you want to look through a shot 
-scene file, and upon initialization of [Shot] object, you would get all of its 
-all Inputs and Parent, and even Parents of all the Inputs and their children 
-and their Inputs and Outputs, and this can go on as long as your graph does not 
+The purpose of this design is to travel through objects at any given point of
+time and place(on demand). For example, if you want to look through a shot
+scene file, and upon initialization of [Shot] object, you would get all of its
+all Inputs and Parent, and even Parents of all the Inputs and their children
+and their Inputs and Outputs, and this can go on as long as your graph does not
 end.
 
 
 ## How?
 
-As this sounds really familiar and awesome in most of the places, the question 
-is how are we gonna implement this, with this complex structure and still 
+As this sounds really familiar and awesome in most of the places, the question
+is how are we gonna implement this, with this complex structure and still
 keeping it modular and granular?
 
-	- COP would be a standalone package, and wont be a coupled with any 
-other package, having most of the things configurable and with the 
-implementation of `relation syntax` and `graphical IOs` all things will happen 
-smoothly. 
-	
- 	# Relation Syntax ?
+    - COP would be a standalone package, and wont be a coupled with any
+other package, having most of the things configurable and with the
+implementation of `relation syntax` and `graphical IOs` all things will happen
+smoothly.
 
-		- Relation syntax are the string of hierarchial structure 
-supplied to `build relation` or `build tree` which is at the heart of the COP, 
+    # Relation Syntax ?
+
+        - Relation syntax are the string of hierarchial structure
+supplied to `build relation` or `build tree` which is at the heart of the COP,
 creates `Node` objects for you. ex: "base_type:assetgroup.name:code"
 
-	# Graphical IO ?
-	
-		- Unlike to relation syntax, this would go bi-directional way, 
-and can be recursive in nature, I dont know what would be the benefit of having 
-recursiveness in this implementaion, but this is something which comes for free 
-with this kind of implementaion, which we can avoid later on, if we dont want 
-to make things super complex. ex: "[`Geom` --> `Looks` --> `ARG`] ==> `Asset` 
-==> [`ShotA` ==> [`FilesetA`] -->, 'ShotB']" (this syntax is just an example, 
+    # Graphical IO ?
+
+        - Unlike to relation syntax, this would go bi-directional way,
+and can be recursive in nature, I dont know what would be the benefit of having
+recursiveness in this implementaion, but this is something which comes for free
+with this kind of implementaion, which we can avoid later on, if we dont want
+to make things super complex. ex: "[`Geom` --> `Looks` --> `ARG`] ==> `Asset`
+==> [`ShotA` ==> [`FilesetA`] -->, 'ShotB']" (this syntax is just an example,
 not yet protoryped)
 
 
 ## Advantage of this implementations
 
-By default this implementation ships with bunch of benefits anyone would get by 
-adopting this design pattern, let me go little deeper here so you would get an 
-idea of the pattern. 
+By default this implementation ships with bunch of benefits anyone would get by
+adopting this design pattern, let me go little deeper here so you would get an
+idea of the pattern.
 
-	# Definition:
+    # Definition:
 
-		[Abstract Factory Method] provides an interface for creating 
-families of related of dependent obejcts without specifying their 
+        [Abstract Factory Method] provides an interface for creating
+families of related of dependent obejcts without specifying their
 identity(concrete classes).
 
-		In other words, the Abstract Factory Pattern is designed for 
-situations where we want to create complex objects that are composed of other 
+        In other words, the Abstract Factory Pattern is designed for
+situations where we want to create complex objects that are composed of other
 objects and where the composed objects are all of one particular “family”
 
-		An Abstract Factory is a class with several Factory methods. So 
-basically, an Abstract Factory class has a collection of different Factory 
+        An Abstract Factory is a class with several Factory methods. So
+basically, an Abstract Factory class has a collection of different Factory
 Methods to create different desired Concrete objects.
 
-So, as per definition, we ended up having advantages of [Factory Method] too, 
-and all the disadvantages of Factory Method are eliminited by Abstract Factory 
+So, as per definition, we ended up having advantages of [Factory Method] too,
+and all the disadvantages of Factory Method are eliminited by Abstract Factory
 Method
 
-	 - It isolates concrete classes from the client.
-			You use the Abstract Factory to control the classes of 
+     - It isolates concrete classes from the client.
+            You use the Abstract Factory to control the classes of
 objects the client creates.
-			Product names are isolated in the implementation of the 
+            Product names are isolated in the implementation of the
 Concrete Factory, clients use the instances through their abstract interfaces.
-	 - Exchanging product families is easy.
-			None of the client code breaks because the abstract 
+     - Exchanging product families is easy.
+            None of the client code breaks because the abstract
 interfaces don’t change frequently.
-			Because the abstract factory creates a complete family 
-of products, the whole product family changes when the concrete factory is 
+            Because the abstract factory creates a complete family
+of products, the whole product family changes when the concrete factory is
 changed.
-	 - It promotes consistency among products.
-			It is the concrete factory’s job to make sure that the 
+     - It promotes consistency among products.
+            It is the concrete factory’s job to make sure that the
 right products are used together.
 
 
 ## Disadvantages
 
-	 - Adding any new entity requires extending  Abstract interface, which 
+     - Adding any new entity requires extending  Abstract interface, which
 could hamper other objects down stream
-	 - Client has to be extended to use the new product
+     - Client has to be extended to use the new product
 
 
-## Challenges 
-	
-- One object should have single responsility and could have only one reason to 
+## Challenges
+
+- One object should have single responsility and could have only one reason to
 change
-	- then how we gonna implement Graphical Relations?
+    - then how we gonna implement Graphical Relations?
 
 - Object should be opened for extension, but closed for modificationhe
-	- Incooperating new entity?
+    - Incooperating new entity?
 
-- High level module must not depend on the low level module, but they should 
+- High level module must not depend on the low level module, but they should
 depend on abstractions
-	- Deep nesting within package?
+    - Deep nesting within package?
 
 
-	
+
 
 ### Node
 
@@ -139,14 +139,14 @@ depend on abstractions
 
 - There are two different kind of relationships which node can have
     - hierarchical
-        - This is a node's parent and child relationship, which also 
+        - This is a node's parent and child relationship, which also
 includes a node to have capability of adopting other nodes as its child
     - referential
-        - This is a relation between a node and any other nodes acting as 
+        - This is a relation between a node and any other nodes acting as
 its input
 
 
-- A node is created or manipulated by a sequence of events which is controlled 
+- A node is created or manipulated by a sequence of events which is controlled
 or generated by the node engine
 
 
@@ -154,4 +154,3 @@ or generated by the node engine
 
 - Engine is responsible for creating node, its hierarchy and its reference
 - Fires up signals aka events
-
